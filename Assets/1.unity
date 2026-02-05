@@ -314,6 +314,7 @@ GameObject:
   - component: {fileID: 408292121}
   - component: {fileID: 408292124}
   - component: {fileID: 408292125}
+  - component: {fileID: 408292126}
   m_Layer: 0
   m_Name: zombie_0
   m_TagString: Enemy
@@ -490,6 +491,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.46, y: 2.86}
   m_EdgeRadius: 0
+--- !u!114 &408292126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408292120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c74b9b22ec2946f4b95b5b2a0c2425f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HW3EnemyCollision
 --- !u!1 &502808584
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,7 +923,6 @@ GameObject:
   - component: {fileID: 1930312801}
   - component: {fileID: 1930312800}
   - component: {fileID: 1930312799}
-  - component: {fileID: 1930312798}
   m_Layer: 0
   m_Name: Square
   m_TagString: Player
@@ -918,18 +930,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1930312798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1930312797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c74b9b22ec2946f4b95b5b2a0c2425f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HW3EnemyCollision
 --- !u!61 &1930312799
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -960,7 +960,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
