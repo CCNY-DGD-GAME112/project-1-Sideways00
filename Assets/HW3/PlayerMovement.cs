@@ -11,21 +11,21 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position += new Vector3(0, 1, 0) * speed;
+            transform.position += new Vector3(0,1,0)* speed;
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position += new Vector3(-1, 0, 0) * speed;
+            transform.position += new Vector3(-1,0,0)* speed;
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.position += new Vector3(0, -1, 0) * speed;
+            transform.position += new Vector3(0,-1,0)* speed;
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position += new Vector3(1, 0, 0) * speed;
+            transform.position += new Vector3(1,0,0)* speed;
         }
     }
 }
