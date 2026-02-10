@@ -1,10 +1,20 @@
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 
 public class SwordBehavior : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if(collision.gameObject.tag == "Enemy") { // Checking if colliding with enemy
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        { // Checking if colliding with enemy
             Destroy(collision.gameObject); // Destorying enemy if its an enemy
+        }
+    }
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Instantiate(gameObject);
         }
     }
 }
