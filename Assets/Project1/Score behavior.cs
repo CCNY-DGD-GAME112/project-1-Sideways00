@@ -6,7 +6,7 @@ public class Scorebehavior : MonoBehaviour
     public TextMeshPro ScoreText;
     public int Score = 0;
     public void UpdateScore(){
-        ScoreText.text = "Score: " + Score;
+        ScoreText.text = "Score:" + Score;
     }
 
     void Start(){

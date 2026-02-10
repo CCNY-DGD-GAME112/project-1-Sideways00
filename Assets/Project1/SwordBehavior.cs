@@ -10,11 +10,9 @@ public class SwordBehavior : MonoBehaviour
             Destroy(collision.gameObject); // Destorying enemy if its an enemy
         }
     }
-    private void Update()
+    public GameObject Sword;
+    public void update()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Instantiate(gameObject);
-        }
+        Sword.transform.position = new Vector3(1, 0, 0);
     }
 }
