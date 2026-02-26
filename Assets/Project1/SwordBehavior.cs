@@ -11,8 +11,10 @@ public class SwordBehavior : MonoBehaviour
         }
     }
     public GameObject Sword;
-    public void Update()
+
+    public SwordBehavior(GameObject sword)
     {
-        Sword.transform.position = new Vector3(1, 0,0);
+        Sword = sword;
     }
 }
+   

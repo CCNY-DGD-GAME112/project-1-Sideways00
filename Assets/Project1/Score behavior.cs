@@ -5,25 +5,37 @@ public class Scorebehavior : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public TextMeshPro ScoreText;
     public int Score = 0;
-    public void UpdateScore(){
+    
+    public void UpdateScore()
+    {
         ScoreText.text = "Score:" + Score;
     }
 
-    void Start(){
+    void Start()
+    {
         UpdateScore();
     }
-    private void OnTriggerEnter2D(Collider2D other){
+    private void OnTriggerEnter2D(Collider2D other)
+    {
         SwordBehavior Zombie = other.gameObject.GetComponent<SwordBehavior>();
-        
-        if(Zombie != null){
+
+        if (Zombie != null)
+        {
             Score++;
             UpdateScore();
         }
-    } 
-    
-    // Update is called once per frame
-    void Update()
+
+    }
+    private void OnTriggerEnter(Collider other)
     {
+        CoinBehavior coin = other.gameObject.GetComponent<CoinBehavior>();
+        if (coin != null)
+        {
+            Score++;
+            UpdateScore();
+        }
+
+        
         
     }
 }
