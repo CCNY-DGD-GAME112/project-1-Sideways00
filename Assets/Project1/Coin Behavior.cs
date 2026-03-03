@@ -8,8 +8,8 @@ public class CoinBehavior : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
-        { // Checking if colliding with enemy
-            Destroy(Coin); // Destorying enemy if its an enemy
+        { 
+            Destroy(Coin); 
         }
     }
 
