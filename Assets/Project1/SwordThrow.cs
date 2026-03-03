@@ -3,7 +3,7 @@ using UnityEngine;
 public class SwordThrow : MonoBehaviour
 {
 
-    public Rigidbody Sword;
+    public Rigidbody2D Sword;
     public GameObject Player;
     public int spawnAmount = 1;
     public float throwSpeed = 10;
@@ -11,8 +11,8 @@ public class SwordThrow : MonoBehaviour
     // Update is called once per frame
     public void throwSword()
     {
-       Rigidbody projectile = Instantiate(Sword, Player.transform.position, Quaternion.Euler(0, 0, -90));
-        projectile.linearVelocity = transform.forward * throwSpeed;
+       Rigidbody2D projectile = Instantiate(Sword, Player.transform.position, Quaternion.Euler(0, 0, -90));
+        projectile.linearVelocity = transform.right * throwSpeed;
     }
     void Update()
     {

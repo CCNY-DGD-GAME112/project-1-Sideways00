@@ -24,10 +24,6 @@ public class Scorebehavior : MonoBehaviour
             Score++;
             UpdateScore();
         }
-
-    }
-    private void OnTriggerEnter(Collider other)
-    {
         CoinBehavior coin = other.gameObject.GetComponent<CoinBehavior>();
         if (coin != null)
         {
@@ -35,7 +31,5 @@ public class Scorebehavior : MonoBehaviour
             UpdateScore();
         }
 
-        
-        
     }
 }

@@ -8,7 +8,8 @@ public class CoinBehavior : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
-        { 
+        {
+            GameManager.Instance.AddScore(1);
             Destroy(Coin); 
         }
     }
