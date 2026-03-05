@@ -9,7 +9,7 @@ public class CoinBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            GameManager.Instance.AddScore(3);
+            GameManager.Instance.AddScore(0);
             Destroy(Coin); 
         }
     }

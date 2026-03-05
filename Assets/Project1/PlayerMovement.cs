@@ -28,5 +28,20 @@ public class PLayerMovement : MonoBehaviour
             transform.position += new Vector3(1,0,0)* speed;
         }
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        SwordBehavior Zombie = other.gameObject.GetComponent<SwordBehavior>();
+
+        if (Zombie != null)
+        {
+            GameManager.Instance.AddScore(5);
+        }
+        CoinBehavior coin = other.gameObject.GetComponent<CoinBehavior>();
+        if (coin != null)
+        {
+            GameManager.Instance.AddScore(1);
+        }
+
+    }
 }
 
