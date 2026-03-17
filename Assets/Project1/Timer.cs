@@ -1,22 +1,24 @@
 using UnityEngine;
 using TMPro;
+
 public class Timer : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public TextMeshProUGUI timerText;
-    public float timer = 5;
-    public AudioSource audioSource; 
-    public AudioClip audioClip;
+    public float elapsedTime;
+    public float threshold;
+    private void Start()
+    {
+        elapsedTime = 0f;
+    }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        timer -= Time.deltaTime;
-        timerText.text = timer.ToString("F2");
-        if (timer <= 0)
+        elapsedTime += Timer.deltaTime;
+        if(elapsedTime > threshold)
         {
-            audioSource.PlayOneShot(audioClip);
-            timer = 5;
+            Debug.Log("Time out!");
         }
     }
 }
