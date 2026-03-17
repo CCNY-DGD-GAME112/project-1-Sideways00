@@ -1,31 +1,29 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+
+public class Spawner : MonoBehaviour
 {
     public GameObject Zombie;
-    public GameObject Coin;
-    public float Radius = 1;
+    public float timeToSpawn;
+    public float spawnCountdown;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        spawnCountdown = timeToSpawn;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        SpawnZombieRandom();
-        SpawnCoinRandom();
+        spawnCountdown -= Time.deltaTime;
+        if (spawnCountdown <= 0)
+        {
+            spawnCountdown = timeToSpawn;
+            Instantiate(Zombie, transform.position, transform.rotation);
+        }
+
     }
-    void SpawnZombieRandom()
-    {
-        Vector2 randomPos = randomPos.insideUnitCircle * Radius;
-        Instantiate(Zombie,randomPos,Quuaternion.ideentity);
-    }
-    void SpawnCoinRandom()
-    {
-        Vector2 randomPos = randomPos.insideUnitCircle * Radius;
-        Instantiate(Coin,randomPos,Quaternion.ideentity);
-    }
+
 }
+

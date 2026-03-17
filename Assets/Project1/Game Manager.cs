@@ -1,16 +1,19 @@
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public GameObject Zombie;
+    public GameObject Coin;
+    public int Score = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void AddScore(int amount){ 
-    Score+=amount;
-    UpdateScore();
+    public void AddScore(int amount)
+    {
+        Score += amount;
+        UpdateScore();
     }
     public TextMeshPro ScoreText;
-    public int Score = 0;
-    
     public void UpdateScore()
     {
         ScoreText.text = "Score:" + Score;
@@ -20,10 +23,7 @@ public class GameManager : MonoBehaviour
     {
         UpdateScore();
     }
+}
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
+    

@@ -974,6 +974,7 @@ GameObject:
   - component: {fileID: 252133679}
   - component: {fileID: 252133681}
   - component: {fileID: 252133680}
+  - component: {fileID: 252133682}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1100,6 +1101,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252133678}
   m_CullTransparentMesh: 1
+--- !u!114 &252133682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252133678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ab8dfe17e4c0a4ca8d23eb8dc7d7bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Timer
+  timerText: {fileID: 252133680}
+  elapsedTime: 0
+  threshold: 0
 --- !u!1 &254933429
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,12 +1461,16 @@ PrefabInstance:
       value: zombie_0 (32)
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1682
+      objectReference: {fileID: 0}
+    - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.9
+      value: -23.42
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.7
+      value: 3.59
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1633,11 +1653,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.8
+      value: -25.7
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -22.9
+      value: -23.57
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1698,7 +1718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.2
+      value: -11.07
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2076,11 +2096,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -41.4
+      value: -40.73
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9
+      value: -1.77
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2815,9 +2835,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Timer
   timerText: {fileID: 752784825}
-  timer: 300
-  audioSource: {fileID: 752784820}
-  audioClip: {fileID: 8300000, guid: a308335c7373443458e72413ff41510a, type: 3}
+  elapsedTime: 300
+  threshold: 300
 --- !u!224 &752784824
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4209,11 +4228,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -46.8
+      value: -46.6
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1
+      value: -1.48
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4650,6 +4669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1072976831}
+  - component: {fileID: 1072976832}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -4672,6 +4692,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1072976832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072976830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3504e3ba57fd54ef8bf4c7328418e28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Spawner
+  Zombie: {fileID: 1638966897676746490, guid: 9771605df83b7f24d9032be581abb871, type: 3}
+  timeToSpawn: 5
+  spawnCountdown: 5
 --- !u!1001 &1103324035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5272,7 +5307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.1
+      value: -6.48
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5442,6 +5477,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1246836923}
+  - component: {fileID: 1246836924}
   m_Layer: 0
   m_Name: Spawner (1)
   m_TagString: Untagged
@@ -5464,6 +5500,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1246836924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246836922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3504e3ba57fd54ef8bf4c7328418e28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Spawner
+  Zombie: {fileID: 1638966897676746490, guid: 9771605df83b7f24d9032be581abb871, type: 3}
+  timeToSpawn: 5
+  spawnCountdown: 5
 --- !u!1001 &1252370004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5535,11 +5586,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40.9
+      value: 40.8
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -22.8
+      value: -23.67
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6051,11 +6102,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.8169775
+      value: -6.62
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.7
+      value: 12.12
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6194,6 +6245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1427871038}
+  - component: {fileID: 1427871039}
   m_Layer: 0
   m_Name: Spawner (2)
   m_TagString: Untagged
@@ -6216,6 +6268,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1427871039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427871037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3504e3ba57fd54ef8bf4c7328418e28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Spawner
+  Zombie: {fileID: 1638966897676746490, guid: 9771605df83b7f24d9032be581abb871, type: 3}
+  timeToSpawn: 5
+  spawnCountdown: 5
 --- !u!1001 &1499223172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6473,7 +6540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.4
+      value: -10.59
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6525,6 +6592,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1596424501}
+  - component: {fileID: 1596424502}
   m_Layer: 0
   m_Name: Spawner (3)
   m_TagString: Untagged
@@ -6547,6 +6615,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1596424502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596424500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3504e3ba57fd54ef8bf4c7328418e28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Spawner
+  Zombie: {fileID: 1638966897676746490, guid: 9771605df83b7f24d9032be581abb871, type: 3}
+  timeToSpawn: 5
+  spawnCountdown: 5
 --- !u!1001 &1625286168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6849,7 +6932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14
+      value: -14.67
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7968,11 +8051,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.6
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.7
+      value: 11.74
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8536,7 +8619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.6
+      value: -14.75
       objectReference: {fileID: 0}
     - target: {fileID: 2851044865796216936, guid: 9771605df83b7f24d9032be581abb871, type: 3}
       propertyPath: m_LocalPosition.z

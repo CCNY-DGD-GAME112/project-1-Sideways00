@@ -15,7 +15,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        elapsedTime += Timer.deltaTime;
+        elapsedTime += Time.deltaTime;
         if(elapsedTime > threshold)
         {
             Debug.Log("Time out!");

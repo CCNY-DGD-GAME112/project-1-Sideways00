@@ -3,7 +3,7 @@ using UnityEngine;
 public class ZombieMovement : MonoBehaviour
 {
     public float speed;
-    private float Move;
+    private float move;
     private Rigidbody2D rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -16,6 +16,6 @@ public class ZombieMovement : MonoBehaviour
     void Update()
     {
         move = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(Move * speed, rb.velocity.y);
+        rb.velocity = new Vector2(move * speed, rb.velocity.y);
     }
 }
